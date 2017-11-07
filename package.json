@@ -1,0 +1,15 @@
+{
+  "name": "Hangman-CLI",
+  "version": "1.0.0",
+  "description": "This is a Node.js Command Line Hangman Game",
+  "main": "cli.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Steven McCreery",
+  "license": "MIT",
+  "dependencies": {
+    
+
+  }
+}
