@@ -1,5 +1,5 @@
 
-var letters = require("./letter.js");
+var letter = require("./letter.js");
 
 var inquirer = require("inquirer");
 
@@ -15,7 +15,7 @@ var hangman = {
 		console.log("=====================================================");
 		console.log("Hangman Round: " + round + ".\nYou have " + guesses + " guesses remaining.\nPlease see below for your previous incorrect guesses:\n" + wrongGuesses);
 		console.log("=====================================================");
-		console.log("Your Current Word is:\n" + letter.makeHiddenArray);
+		console.log("Your Current Word is:\n" + new letter(letter));
 		console.log("=====================================================");
 		inquirer.prompt([
 			{
