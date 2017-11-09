@@ -1,26 +1,44 @@
 
-function word = (currentWord, available) {
+function Word(currentWord) {
 	
 	console.log("word constructor");
 
 	this.currentWord = currentWord;
 
+	this.randomize = function() {
+		
+		Word.available = [
+			"one", "two", "three"
+		];
+
+		console.log(Word.available);
+
+		Word.randomWord = Math.floor(Math.random() * Word.available.length);
+		Word.currentWord = Word.available[Word.randomWord];
+		console.log(Word.currentWord);
+
+	};
 
 }
 
-word.prototype.randomize() {
+var bob = new Word;
+bob.randomize();
+
+// Word.prototype.randomize = (function() {
 	
-	console.log("word prototype");
+// 	console.log("word prototype");
 	
-	available = [
-		"one", "two", "three"
-	],
+// 	Word.available = [
+// 		"one", "two", "three"
+// 	];
 
-	word.currentWord = funciton() {
-		Math.floor(Math.random() * word.available.length);
-	}
+// 	console.log(Word.available);
 
-}
+// 	Word.randomWord = Math.floor(Math.random() * Word.available.length);
+// 	Word.currentWord = Word.available[Word.randomWord];
+// 	console.log(Word.currentWord);
+
+// })();
 
 
-module.exports = word;
+module.exports = Word;

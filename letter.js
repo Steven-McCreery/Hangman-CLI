@@ -1,26 +1,32 @@
-var word = require("./word");
+var Word = require("./word");
 
+var word = new Word;
 
-function letter (word) {
+console.log("Letter File's Word: " + Word);
+
+function Letter(Word) {
 
 	console.log("letter constructor");
 	
-	this.word = word;
+	this.Word = Word;
 
 }
 
-letter.prototype.makeHiddenAerray() {
+Letter();
+
+Letter.prototype.makeHiddenArray = (function() {
 	
 	console.log("letter prototype");
 
 	newWord = [];
 
-	newWord = word.randomize;
+	newWord = Letter.randomize();
 
 	for (var i = 0; i < newWord.length; i++) {
 		var underscores = underscores + "_ ";
 		console.log(underscores);
 	}
-}
 
-module.exports = letter;
+})();
+
+module.exports = Letter;
