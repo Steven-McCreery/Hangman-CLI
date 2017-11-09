@@ -15,6 +15,8 @@ var hangman = {
 		console.log("=====================================================");
 		console.log("Hangman Round: " + round + ".\nYou have " + guesses + " guesses remaining.\nPlease see below for your previous incorrect guesses:\n" + wrongGuesses);
 		console.log("=====================================================");
+		console.log("Your Current Word is:\n" + letter.makeHiddenArray);
+		console.log("=====================================================");
 		inquirer.prompt([
 			{
 				type: "input",
@@ -47,7 +49,6 @@ var hangman = {
 					}
 				})
 			}
-			// console.log(currentGuess);
 		})
 	}
 
