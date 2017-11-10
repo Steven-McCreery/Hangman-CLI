@@ -22,6 +22,9 @@ var hangman = {
 				type: "input",
 				message: "Please guess a letter",
 				name: "letter"
+				validate: function(input) {
+					if ()
+				}
 			}
 		]).then(function(currentGuess){
 			wrongGuesses.push(currentGuess.letter);
