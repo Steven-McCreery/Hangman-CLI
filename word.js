@@ -22,8 +22,8 @@ function Word(currentWord) {
 
 }
 
-var bob = new Word;
-bob.randomize();
+// var bob = new Word;
+// bob.randomize();
 
 // Word.prototype.randomize = (function() {
 	
