@@ -9,21 +9,43 @@ var round = 1;
 
 var wrongGuesses = [];
 
+var valid = /[A-Za-z]/;
+
+var generate = 0;
+
+var wordGenerated = [];
+
 var hangman = {
 
 	start() {
+
+		if (generate < 1) {
+			generate++;
+			hangman.generateWord();
+		}
+
 		console.log("=====================================================");
 		console.log("Hangman Round: " + round + ".\nYou have " + guesses + " guesses remaining.\nPlease see below for your previous incorrect guesses:\n" + wrongGuesses);
 		console.log("=====================================================");
-		console.log("Your Current Word is:\n" + new letter(letter));
+		console.log("Your Current Word is:\n" + wordGenerated);
 		console.log("=====================================================");
 		inquirer.prompt([
 			{
 				type: "input",
 				message: "Please guess a letter",
-				name: "letter"
+				name: "letter",
 				validate: function(input) {
-					if ()
+					if (input.length < 1) {
+						console.log("Please provide a letter as input!");
+						return false;
+					} else if (input.length > 1) {
+						console.log("Please provide a single letter as input!");
+						return false;
+					} else if (!valid.test(input)) {
+						console.log("Please provide an alpha character as input!");
+						return false;
+					} 
+					return true;
 				}
 			}
 		]).then(function(currentGuess){
@@ -46,6 +68,7 @@ var hangman = {
 						guesses = 9;
 						round = 1;
 						wrongGuesses = [];
+						generate = 0;
 						hangman.start();
 					} else{
 						console.log("Thanks for playing, goodbye!");
@@ -57,6 +80,25 @@ var hangman = {
 
 
 }
+
+hangman.prototype.generateWord = function() {
+	wordGenerated = [];
+	wordGenerated = new Letter;
+}
+
+hangman.prototype.incorrect = function() {
+	wrongGuesses.push(currentGuess.letter);
+	guesses--;
+	round++;
+}
+
+hangman.prototype.correct = function() {
+	// wrongGuesses.push(currentGuess.letter);
+	
+	round++;
+}
+
+
 
 
 
