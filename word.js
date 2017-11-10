@@ -16,6 +16,7 @@ function Word(currentWord) {
 		Word.randomWord = Math.floor(Math.random() * Word.available.length);
 		Word.currentWord = Word.available[Word.randomWord];
 		console.log(Word.currentWord);
+		return Word.currentWord;
 
 	};
 
