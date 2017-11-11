@@ -1,35 +1,49 @@
-var Word = require("./word");
 
-var word = new Word;
-
-var underscores = "";
 
 // console.log("Letter File's Word: " + Word);
 
-function Letter(Word) {
+	
+function Letter(currentWord) {
+	// requiring word file
+	var Word = require("./word");
 
+	// constructing new word within letter function
+	var word = new Word;
+	
+	// setting properties and methods
 	console.log("letter constructor");
+	
+	var underscores = "";
+
+	var newWord = [];
+
+	this.newWord = newWord;
 	
 	this.word = word;
 
+	this.underscores = underscores;
+
 	this.makeHiddenArray = (function() {
 
-		newWord = [];
-
-		newWord = this.word.randomize();
+		newWord = this.currentWord;
 
 		console.log("New Word is: " + newWord);
 
+		// taking the generated word from imported constructor and transforming it into underscores
 		for (var i = 0; i < newWord.length; i++) {
 			underscores = underscores + "_ ";
 		}
 
-		console.log(underscores);
+		console.log("The New Word transformed into underscores is: " + underscores);
 
-		return underscores;
+
 	})();
+
+	return this.newWord;
+
+	return this.underscores;
 }
-Letter();
+// Letter();
 
 // Letter.prototype.makeHiddenArray = (function() {
 	
