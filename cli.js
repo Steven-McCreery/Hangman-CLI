@@ -15,7 +15,7 @@ var generate = 0;
 
 var wordGenerated = [];
 
-function hangman(now) {
+function hangman(now) { 
 
 	this.start = function() {
 
