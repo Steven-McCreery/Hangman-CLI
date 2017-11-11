@@ -5,23 +5,24 @@ function Word(currentWord) {
 
 	this.currentWord = currentWord;
 
-	this.randomize = function() {
+	this.randomize = (function() {
 		
-		Word.available = [
-			"one", "two", "three"
+		this.available = [
+			"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"
 		];
 
-		console.log(Word.available);
+		console.log(this.available);
 
-		Word.randomWord = Math.floor(Math.random() * Word.available.length);
-		Word.currentWord = Word.available[Word.randomWord];
-		console.log(Word.currentWord);
-		return Word.currentWord;
+		this.randomWord = Math.floor(Math.random() * this.available.length);
+		this.currentWord = this.available[this.randomWord];
+		console.log(this.currentWord);
+		return this.currentWord;
 
-	};
+	})();
 
 }
 
+// Word();
 // var bob = new Word;
 // bob.randomize();
 

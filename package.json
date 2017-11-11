@@ -9,7 +9,6 @@
   "author": "Steven McCreery",
   "license": "MIT",
   "dependencies": {
-    
-
+    "inquirer": "^3.3.0"
   }
 }
