@@ -15,13 +15,13 @@ var generate = 0;
 
 var wordGenerated = [];
 
-var hangman = {
+function hangman(now) {
 
-	start() {
+	this.start = function() {
 
 		if (generate < 1) {
 			generate++;
-			hangman.generateWord();
+			this.generateWord();
 		}
 
 		console.log("=====================================================");
@@ -100,6 +100,6 @@ hangman.prototype.correct = function() {
 
 
 
+var game = new hangman;
 
-
-hangman.start();
+game.start();
